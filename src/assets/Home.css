@@ -1,0 +1,365 @@
+/* Base Styles */
+*{
+  box-sizing: border-box;
+}
+.home-section {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.home-wrapper {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Image Styling - Smaller and aligned to bottom */
+.image-section {
+  position: relative;
+  flex: 0 0 auto;
+  width: 35%;
+  max-width: 350px;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding: 1rem;
+  align-self: flex-end;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 120%; /* Adjust this for desired aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 auto;
+}
+
+.image-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+.profile-image:focus-visible {
+  outline: 2px solid #2563eb;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.15) 0%,
+    rgba(37, 99, 235, 0) 70%
+  );
+  border-radius: 20px;
+  z-index: 3;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.image-shadow {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background: rgba(37, 99, 235, 0.08);
+  border-radius: 25px;
+  z-index: 0;
+  filter: blur(12px);
+  transition: all 0.3s ease;
+  transform: translateZ(-1px);
+}
+
+.image-container:hover .image-inner {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.image-container:hover .image-shadow {
+  transform: translateY(5px);
+  opacity: 0.3;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+}
+
+.primary-btn {
+  background-color: #2563eb;
+  color: white;
+  border: 2px solid #2563eb;
+  box-shadow: 0 4px 6px rgba(74, 107, 255, 0.3);
+}
+
+.primary-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 4px 15px rgba(255, 0, 128, 0.5);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Typography */
+.name-title {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.2;
+  font-family: 'Poppins', sans-serif;
+}
+
+.role-subtitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #ff6f00;
+  position: relative;
+  display: inline-block;
+}
+
+.role-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #14BDEB;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .home-section {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 922px) {
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .text-content {
+    padding: 0;
+  }
+
+  .role-subtitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .image-section {
+    margin-top: 1rem;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-section {
+    padding: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .image-section {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 400px) {
+  .name-title {
+    font-size: 1.8rem;
+  }
+  
+  .role-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+}
+/* Rest of your existing styles (buttons, typography, animations) remain the same */
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 1200px) {
+  .image-section {
+    width: 40%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .home-section {
+    padding-top: 4rem;
+  }
+  .image-section {
+    width: 45%;
+    max-width: 280px;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .image-section {
+    width: 60%;
+    max-width: 250px;
+    margin: 2rem auto 0;
+    align-self: center;
+  }
+
+  .role-subtitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-section {
+    padding: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .image-section {
+    width: 70%;
+    max-width: 220px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .image-section {
+    width: 80%;
+    max-width: 200px;
+  }
+  
+  .name-title {
+    font-size: 1.8rem;
+  }
+}

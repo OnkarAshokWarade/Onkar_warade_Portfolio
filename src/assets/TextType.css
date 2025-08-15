@@ -1,0 +1,23 @@
+.text-type {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.text-type__content {
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: normal;
+  font-size: inherit;
+  color: inherit;
+}
+
+.text-type__cursor--hidden {
+  visibility: hidden;
+}
