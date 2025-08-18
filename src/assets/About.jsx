@@ -28,7 +28,7 @@ const About = () => {
         
         <div className="bio-content">
           <p>
-            I am a professional web developer with 5+ years of experience creating modern, 
+            I am a professional web developer with experience creating modern, 
             responsive websites and applications. My expertise lies in front-end development 
             with a strong focus on user experience and clean code architecture.
           </p>
@@ -63,5 +63,6 @@ const About = () => {
     </section>
   );
 };
+
 
 export default About;
