@@ -1,4 +1,5 @@
-/* Global font fallback */
+
+
 * {
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
@@ -134,13 +135,12 @@
   border-color: #e5e7eb;
 }
 
-/* Hover */
+/* Hover and active effects */
 .animated-btn:hover:not(.disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(29, 78, 216, 0.12);
 }
 
-/* Active */
 .animated-btn:active {
   transform: scale(0.98);
 }
