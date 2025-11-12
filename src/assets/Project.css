@@ -2,8 +2,6 @@
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
-
-/* Section wrapper */
 .project-section {
   padding: 4rem 1rem;
   background-color: #f9fafb;
@@ -102,7 +100,6 @@
   flex: 1 1 auto;
 }
 
-/* Buttons */
 .project-buttons {
   display: flex;
   gap: 0.75rem;
@@ -119,21 +116,16 @@
   transition: transform 0.18s ease, background-color 0.2s, box-shadow 0.2s;
 }
 
-/* Animated button */
 .animated-btn {
   background-color: #1d4ed8;
   color: #fff;
   border-color: transparent;
 }
-
-/* Outline variant */
 .animated-btn.outline {
   background-color: #fff;
   color: #111827;
   border-color: #e5e7eb;
 }
-
-/* Hover and active effects */
 .animated-btn:hover:not(.disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(29, 78, 216, 0.12);
@@ -142,8 +134,6 @@
 .animated-btn:active {
   transform: scale(0.98);
 }
-
-/* Disabled state */
 .btn.disabled,
 .btn[aria-disabled="true"] {
   opacity: 0.55;
