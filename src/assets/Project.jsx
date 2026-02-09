@@ -12,12 +12,12 @@ import Project4Image from "../assets/Images/Weather.jpg";
 const projects = [
   {
     id: 1,
-    title: "KitchenNest",
+    title: "WeatherPro",
     description:
-      "A simple and user-friendly web app for small home kitchens to manage recipes, orders, and customer interactions. Clean, responsive UI for browsing menus and placing orders.",
-    image: Project3Image,
-    liveUrl: "",
-    codeUrl: "",
+      "Simple weather app: enter a city or postal code to check the current temperature and weather conditions with a clean UI.",
+    image: Project4Image,
+    liveUrl: "https://weather-pro-snowy.vercel.app/",
+    codeUrl: "https://github.com/OnkarAshokWarade/WeatherPro",
   },
   {
     id: 2,
@@ -25,8 +25,8 @@ const projects = [
     description:
       "Interactive educational site where clicking alphabet buttons (A–Z) displays a related image for each letter — great for kids learning letters and visuals.",
     image: Project2Image,
-    liveUrl: "https://learn-with-alphabets.vercel.app/",
-    codeUrl: "https://github.com/OnkarAshokWarade/LearnWithAlphabets",
+    liveUrl: "",
+    codeUrl: "",
   },
   {
     id: 3,
@@ -39,12 +39,12 @@ const projects = [
   },
   {
     id: 4,
-    title: "WeatherPro",
+    title: "KitchenNest",
     description:
-      "Simple weather app: enter a city or postal code to check the current temperature and weather conditions with a clean UI.",
-    image: Project4Image,
-    liveUrl: "https://weather-pro-snowy.vercel.app/",
-    codeUrl: "https://github.com/OnkarAshokWarade/WeatherPro",
+      "A simple and user-friendly web app for small home kitchens to manage recipes, orders, and customer interactions. Clean, responsive UI for browsing menus and placing orders.",
+    image: Project3Image,
+    liveUrl: "",
+    codeUrl: "",
   },
 ];
 
@@ -138,4 +138,5 @@ export default function ProjectSection() {
     </section>
   );
 }
+
 
