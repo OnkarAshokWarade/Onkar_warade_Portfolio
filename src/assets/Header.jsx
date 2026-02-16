@@ -52,7 +52,7 @@ const Header = () => {
               <span className="link-underline"></span>
             </a>
             <a href="#contact" className="nav-link" onClick={closeMenu}>
-              <span className="link-text">Contact</span>
+              <span className="link-text">Say hii</span>
               <span className="link-underline"></span>
             </a>
           </div>
@@ -73,5 +73,6 @@ const Header = () => {
     </header>
   );
 };
+
 
 export default Header;
