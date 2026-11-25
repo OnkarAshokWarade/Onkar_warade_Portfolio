@@ -1,6 +1,7 @@
 import bootstrapLogo from 'devicon/icons/bootstrap/bootstrap-original.svg'
 import cssLogo from 'devicon/icons/css3/css3-original.svg'
 import expressLogo from 'devicon/icons/express/express-original.svg'
+import fastapiLogo from 'devicon/icons/fastapi/fastapi-original.svg'
 import gitLogo from 'devicon/icons/git/git-original.svg'
 import githubLogo from 'devicon/icons/github/github-original.svg'
 import htmlLogo from 'devicon/icons/html5/html5-original.svg'
@@ -77,6 +78,7 @@ export const technologies = [
   { name: 'Bootstrap', category: 'Frontend', logo: bootstrapLogo, color: '#9b72e8' },
   { name: 'Node.js', category: 'Backend', logo: nodeLogo, color: '#339933', featured: true },
   { name: 'Express', category: 'Backend', logo: expressLogo, color: '#f4f4f5', invert: true },
+  { name: 'FastAPI', category: 'Backend', logo: fastapiLogo, color: '#05998b' },
   { name: 'Java', category: 'Backend', logo: javaLogo, color: '#ed1d25' },
   { name: 'MongoDB', category: 'Database & Tools', logo: mongodbLogo, color: '#47a248', featured: true },
   { name: 'PostgreSQL', category: 'Database & Tools', logo: postgresqlLogo, color: '#4169e1' },

@@ -272,3 +272,27 @@ body::before { opacity: 1; background: linear-gradient(rgba(157, 91, 220, .045) 
   /* Reveal cards with transform + opacity only, promoted while they animate. */
   .toolkit-section .tech-constellation.is-visible .tech-card { will-change: transform, opacity; }
 }
+
+/* ---------- Skills grid: centre the last row for any number of cards ----------
+   Each card spans two half-width tracks: (W - (2n-1)g) / 2n * 2 + g = (W - (n-1)g) / n,
+   so card width and gap are exactly what the n-column grid gave. The first card of a short
+   last row is pushed in by one half-column per missing card, which centres that row.
+   This replaces the old per-card offsets that only worked for exactly 13 cards. */
+.toolkit-section .tech-grid > .tech-card { grid-column: span 2; width: auto; justify-self: stretch; }
+
+@media (min-width: 1024px) {
+  .toolkit-section .tech-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .toolkit-section .tech-grid > .tech-card:nth-child(5n+1):nth-last-child(4) { grid-column: 2 / span 2; }
+  .toolkit-section .tech-grid > .tech-card:nth-child(5n+1):nth-last-child(3) { grid-column: 3 / span 2; }
+  .toolkit-section .tech-grid > .tech-card:nth-child(5n+1):nth-last-child(2) { grid-column: 4 / span 2; }
+  .toolkit-section .tech-grid > .tech-card:nth-child(5n+1):nth-last-child(1) { grid-column: 5 / span 2; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .toolkit-section .tech-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .toolkit-section .tech-grid > .tech-card:nth-child(3n+1):nth-last-child(2) { grid-column: 2 / span 2; }
+  .toolkit-section .tech-grid > .tech-card:nth-child(3n+1):nth-last-child(1) { grid-column: 3 / span 2; }
+}
+@media (max-width: 767px) {
+  .toolkit-section .tech-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .toolkit-section .tech-grid > .tech-card:nth-child(2n+1):nth-last-child(1) { grid-column: 2 / span 2; }
+}
