@@ -1,12 +1,66 @@
-# React + Vite
+# Onkar Warade Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and Vite portfolio website.
 
-Currently, two official plugins are available:
+## Update portfolio content
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Most frequently changed information is in `src/data/portfolioData.js`:
 
-## Expanding the ESLint configuration
+- **Personal information:** edit `personalInfo` for the name, initials, roles, email, phone, and location.
+- **Current role and company:** edit `currentRole` for the job title, company, description, and focus areas.
+- **Skills:** add, edit, reorder, or remove entries in `technologies`. Skill logos are imported at the top of the same file. Toolkit totals update automatically.
+- **Projects:** add, edit, reorder, or remove entries in `projects`. Keep `variant` as `flow`, `ops`, or `commerce` to use one of the existing card visuals.
+- **Contact and social links:** edit `personalInfo`, `socialLinks`, and `contactFormUrl`.
+- **Resume and toolkit video paths:** edit `siteAssets`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The current resume and video files are:
+
+- `public/Onkar-Warade-Resume.pdf`
+- `public/x.webm`
+
+Replace either file with a file of the same name, or update its path in `siteAssets`.
+
+## Update a website section
+
+Each major section has its own file in `src/sections`:
+
+- `HeroSection.jsx`
+- `ApproachSection.jsx`
+- `ToolkitSection.jsx`
+- `ExperienceSection.jsx`
+- `ProjectsSection.jsx`
+- `ContactSection.jsx`
+
+Shared page elements are in `src/components`. The main page order is in `src/App.jsx`.
+
+Styles are in `src/styles`:
+
+- `site.css` contains the main site, section, responsive, and animation styles.
+- `interactive-sections.css` contains the orbit and toolkit visual effects.
+- `responsive-polish.css` contains final layout and responsive adjustments and must stay loaded last.
+
+## Run locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Check the code:
+
+```bash
+npm run lint
+```

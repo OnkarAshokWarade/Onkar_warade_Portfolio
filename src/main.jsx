@@ -1,19 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@fontsource-variable/fraunces/full.css'
+import '@fontsource-variable/fraunces/full-italic.css'
+import '@fontsource-variable/dm-sans'
+import '@fontsource-variable/jetbrains-mono'
 import './index.css'
-import Header from './assets/Header.jsx'
-import Home from './assets/Home.jsx'
-import About from './assets/About.jsx'
-import Skills from './assets/Skills.jsx'
-import Project from './assets/Project.jsx'
-import Contact  from './assets/Contact.jsx'
+import App from './App.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header />
-    <Home />
-    <About />
-    <Skills/>
-    <Project/>
-    <Contact/>
-  </StrictMode>
+    <App />
+  </StrictMode>,
 )
