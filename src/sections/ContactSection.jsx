@@ -53,6 +53,10 @@ function ContactSection() {
               <dd><a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a><CopyButton label="Email" value={personalInfo.email} /></dd>
             </div>
             <div>
+              <dt>Alternate email</dt>
+              <dd><a href={`mailto:${personalInfo.footerEmail}`}>{personalInfo.footerEmail}</a><CopyButton label="Alternate email" value={personalInfo.footerEmail} /></dd>
+            </div>
+            <div>
               <dt>Phone</dt>
               <dd><a href={personalInfo.phoneLink}>{personalInfo.phone}</a><CopyButton label="Phone" value={personalInfo.phone} /></dd>
             </div>

@@ -55,7 +55,7 @@ export const contactFormUrl = 'https://formspree.io/f/moeabnwv'
 export const navigationItems = [
   ['Home', 'home'],
   ['Approach', 'about'],
-  ['Toolkit', 'skills'],
+  ['Skills', 'skills'],
   ['Experience', 'experience'],
   ['Contact', 'contact'],
 ]

@@ -31,7 +31,7 @@ function ToolkitSection() {
       {!reduceMotion && !videoFailed && <video className="toolkit-video" autoPlay loop muted playsInline preload="metadata" aria-hidden="true" onError={() => setVideoFailed(true)}><source src={siteAssets.toolkitVideoUrl} type="video/webm" /></video>}
       <div className="toolkit-backdrop" aria-hidden="true"><span /><span /><span /></div>
       <div className="toolkit-content section-wrap">
-        <div className="section-kicker">02 / THE TOOLKIT</div>
+        <div className="section-kicker">02 / SKILLS</div>
         <div className="toolkit-heading section-heading"><h2>Technology <span>stack</span></h2><p>A focused toolkit for building intelligent systems, reliable applications, and polished digital experiences.</p></div>
         <div className={`tech-constellation ${isVisible ? 'is-visible' : ''}`}>
           <div className="constellation-paths" aria-hidden="true"><i /><i /><i /><i /></div>
