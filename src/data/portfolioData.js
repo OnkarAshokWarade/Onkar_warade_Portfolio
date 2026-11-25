@@ -1,5 +1,6 @@
 import bootstrapLogo from 'devicon/icons/bootstrap/bootstrap-original.svg'
 import cssLogo from 'devicon/icons/css3/css3-original.svg'
+import dockerLogo from 'devicon/icons/docker/docker-original.svg'
 import expressLogo from 'devicon/icons/express/express-original.svg'
 import fastapiLogo from 'devicon/icons/fastapi/fastapi-original.svg'
 import gitLogo from 'devicon/icons/git/git-original.svg'
@@ -83,6 +84,7 @@ export const technologies = [
   { name: 'MongoDB', category: 'Database & Tools', logo: mongodbLogo, color: '#47a248', featured: true },
   { name: 'PostgreSQL', category: 'Database & Tools', logo: postgresqlLogo, color: '#4169e1' },
   { name: 'Git', category: 'Database & Tools', logo: gitLogo, color: '#f05032' },
+  { name: 'Docker', category: 'Database & Tools', logo: dockerLogo, color: '#2496ed' },
 ]
 
 export const technologyCategories = [

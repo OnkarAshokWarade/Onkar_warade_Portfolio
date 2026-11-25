@@ -141,27 +141,34 @@ body::before { opacity: 1; background: linear-gradient(rgba(157, 91, 220, .045) 
   .principles { grid-template-columns: repeat(4, 1fr); column-gap: 2rem; }
 }
 
-/* ---------- Experience: role sheet ---------- */
+/* ---------- Current focus: two-column timeline ---------- */
 .block-experience { border-block: 1px solid var(--rule); }
-.role-sheet { display: grid; gap: 2rem; padding: clamp(1.5rem, 4vw, 2.75rem); border: 1px solid var(--rule); border-radius: 1.5rem; background: #fff; box-shadow: 0 1.5rem 3.5rem rgba(21, 40, 41, .07); }
-.role-when { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
+.focus-layout { display: grid; gap: clamp(2.5rem, 6vw, 4rem); }
+.block-experience .focus-head { margin-bottom: 0; }
+/* The role hangs off a vertical timeline line, with a node marking "now" */
+.focus-timeline { position: relative; padding-left: clamp(2rem, 5vw, 2.75rem); }
+.focus-timeline::before { content: ""; position: absolute; top: 1rem; bottom: 0; left: .5rem; width: 2px; border-radius: 2px; background: linear-gradient(var(--violet), var(--green) 65%, transparent); }
+.focus-timeline::after { content: ""; position: absolute; top: .45rem; left: 0; width: 1.05rem; height: 1.05rem; box-sizing: border-box; border: 3px solid var(--violet); border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px rgba(23, 174, 181, .14); }
+.focus-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; }
+.focus-title { margin-top: 1.25rem; color: var(--ink-strong); font-family: var(--display); font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 600; font-variation-settings: 'opsz' 144, 'SOFT' 30; line-height: 1.06; letter-spacing: -.015em; }
+/* Focus areas as numbered white tiles */
+.focus-areas { display: grid; grid-template-columns: 1fr; gap: .85rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.focus-areas li { display: flex; flex-direction: column; gap: .9rem; padding: 1.2rem 1.25rem 1.35rem; border: 1px solid var(--rule); border-radius: 1.1rem; background: #fff; box-shadow: 0 1rem 2.5rem rgba(21, 40, 41, .06); }
+.focus-area-num { color: var(--violet); font-family: var(--code-font); font-size: .8rem; font-weight: 600; }
+.focus-area-name { color: var(--ink-strong); font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+
+@media (min-width: 40rem) {
+  .focus-areas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) {
+  .focus-layout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; column-gap: clamp(3rem, 6vw, 5rem); }
+  .block-experience .focus-head { position: sticky; top: 6.5rem; }
+}
 .role-live { display: inline-flex; min-height: 2rem; align-items: center; gap: .5rem; padding: .3rem .8rem; border-radius: 999px; color: #2f5a0c; background: rgba(185, 233, 78, .35); font-family: var(--code-font); font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .role-live i { width: .5rem; height: .5rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(143, 220, 87, .5); animation: liveDot 2.2s ease-out infinite; }
 .role-kind { color: var(--ink-faint); font-family: var(--code-font); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
-.role-main h3 { color: var(--ink-strong); font-family: var(--display); font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 600; font-variation-settings: 'opsz' 96; line-height: 1.12; letter-spacing: -.01em; }
-.role-company { margin-top: .5rem; color: var(--cyan); font-size: 1.05rem; font-weight: 650; }
+.role-company { margin-top: .6rem; color: var(--cyan); font-size: 1.1rem; font-weight: 650; }
 .role-description { max-width: 36rem; margin-top: 1rem; color: var(--ink-body); line-height: 1.75; }
-.role-focus { display: grid; margin: 0; padding: 0; list-style: none; }
-.role-focus li { display: flex; min-height: 3.5rem; align-items: center; gap: 1rem; border-top: 1px solid var(--rule); color: var(--ink-strong); font-weight: 550; }
-.role-focus li:last-child { border-bottom: 1px solid var(--rule); }
-.role-focus span { color: var(--violet); font-family: var(--code-font); font-size: .8rem; }
-
-@media (min-width: 64rem) {
-  .role-sheet { grid-template-columns: 1fr 18rem; grid-template-areas: 'when when' 'main focus'; column-gap: 4rem; }
-  .role-when { grid-area: when; }
-  .role-main { grid-area: main; }
-  .role-focus { grid-area: focus; align-self: end; }
-}
 
 /* ---------- Projects: editorial index ---------- */
 .work-index { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule-strong); }
