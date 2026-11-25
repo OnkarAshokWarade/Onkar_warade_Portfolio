@@ -237,3 +237,38 @@ body::before { opacity: 1; background: linear-gradient(rgba(157, 91, 220, .045) 
   .role-live i { animation: none; }
   .principle::before, .topbar-links { transition: none; }
 }
+
+/* ---------- Skills (Toolkit) on phones and touch screens: same look, smoother motion ----------
+   Each effect below forced the browser to repaint or re-blur large areas on every frame
+   over the playing video. They are swapped for compositor-only equivalents. */
+@media (max-width: 767px), (hover: none) and (pointer: coarse) {
+  /* Frosted-glass blur on 13 cards over a moving video was the main jank source:
+     drop the live blur and make the card fill a touch more solid instead. */
+  .toolkit-section .tech-card,
+  .toolkit-section .tech-card.is-featured {
+    background: linear-gradient(180deg, rgba(54, 31, 87, .62), rgba(25, 13, 45, .55));
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  /* The card glow already fades out through its radial gradient; the extra blur is not needed. */
+  .toolkit-section .tech-card::before { filter: none; }
+  /* Colour filters on a playing, zooming video are re-applied every frame;
+     the video already sits at low opacity over a dark ground, so plain opacity looks the same. */
+  .toolkit-section .toolkit-video {
+    filter: none;
+    opacity: .21; /* was .34 opacity x .62 brightness */
+    will-change: transform;
+    transform: translateZ(0) scale(1.035);
+  }
+  /* Glow circles: a soft radial mask replaces the heavy blur, so the drift runs on the GPU. */
+  .toolkit-section .toolkit-backdrop span {
+    filter: none;
+    -webkit-mask-image: radial-gradient(closest-side, #000, transparent);
+    mask-image: radial-gradient(closest-side, #000, transparent);
+    will-change: transform;
+  }
+  /* The dotted grid drifted by animating background-position (a full repaint each frame). */
+  .toolkit-section .toolkit-backdrop::after { animation: none; }
+  /* Reveal cards with transform + opacity only, promoted while they animate. */
+  .toolkit-section .tech-constellation.is-visible .tech-card { will-change: transform, opacity; }
+}
